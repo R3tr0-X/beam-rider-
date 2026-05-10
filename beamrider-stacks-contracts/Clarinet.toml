@@ -1,0 +1,30 @@
+[project]
+name = "beamrider-stacks-contracts"
+description = "BeamRider Stacks-side identity, payment ledger, signal oracle, and yield vault."
+authors = ["BeamRider"]
+telemetry = false
+cache_dir = "./.cache"
+
+[contracts.beamrider-registry]
+path = "contracts/beamrider-registry.clar"
+clarity_version = 3
+epoch = 3.0
+
+[contracts.signal-ledger]
+path = "contracts/signal-ledger.clar"
+clarity_version = 3
+epoch = 3.0
+
+[contracts.signal-oracle]
+path = "contracts/signal-oracle.clar"
+clarity_version = 3
+epoch = 3.0
+
+[contracts.yield-vault]
+path = "contracts/yield-vault.clar"
+clarity_version = 3
+epoch = 3.0
+
+[repl.analysis]
+passes = ["check_checker"]
+check_checker = { trusted_sender = false, trusted_caller = false, callee_filter = false }

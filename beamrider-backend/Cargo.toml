@@ -1,0 +1,46 @@
+[package]
+name = "beamrider-backend"
+version = "0.1.0"
+edition = "2024"
+description = "Autonomous agent backend for BeamRider — sells price/market signals over x402, routes earnings cross-chain via CCTP V2 hooks"
+license = "MIT"
+
+[dependencies]
+# HTTP server
+axum = "0.8"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "trace", "limit"] }
+tokio = { version = "1", features = ["full"] }
+
+# EVM + CCTP
+alloy = { version = "1.0", features = ["full", "signer-local"] }
+
+# AI agent orchestration
+rig-core = { version = "0.21", features = ["derive"] }
+
+# DB
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "sqlite", "macros", "migrate", "chrono"] }
+
+# HTTP client (x402 facilitator, external APIs)
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+
+# Crypto for signed responses (replaces TEE)
+ed25519-dalek = { version = "2.1", features = ["rand_core"] }
+
+# Boilerplate
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+config = "0.15"
+dotenvy = "0.15"
+async-trait = "0.1"
+base64 = "0.22"
+hex = "0.4"
+rand = "0.9"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }

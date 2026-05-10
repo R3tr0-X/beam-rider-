@@ -1,0 +1,1 @@
+pub const DEFAULT_REQUEST_LIMIT_BYTES: usize = 64 * 1024;

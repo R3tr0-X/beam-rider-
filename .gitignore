@@ -1,0 +1,45 @@
+# ─── Rust ────────────────────────────────────────────────────────────────────
+/beamrider-backend/target/
+# Cargo.lock is intentionally committed for binary crates (reproducible builds)
+
+# ─── Foundry / Solidity ──────────────────────────────────────────────────────
+/beamrider-contracts/out/
+/beamrider-contracts/cache/
+/beamrider-contracts/.cache/
+
+# ─── Clarinet / Stacks ───────────────────────────────────────────────────────
+/beamrider-stacks-contracts/.cache/
+/beamrider-stacks-contracts/.git/
+
+# ─── SQLite databases ────────────────────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+/data/
+
+# ─── Environment / secrets ───────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# keep .env.example files — they document required vars without secrets
+
+# ─── Frontend (Next.js) ──────────────────────────────────────────────────────
+/beamrider-frontend/node_modules/
+/beamrider-frontend/.next/
+/beamrider-frontend/.vercel/
+/beamrider-frontend/out/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# (docker-compose.yml is committed; only ephemeral Docker build artifacts)
+
+# ─── OS / editor ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── CI/CD temp ──────────────────────────────────────────────────────────────
+*.log
